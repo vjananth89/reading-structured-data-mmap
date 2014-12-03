@@ -11,8 +11,7 @@ The C program analyze.c and accompanying header file bmp.h contains an example f
 The execution of analyze.c will produce a blue stripe along the left edge of the image; and you'll see this result with gimp, a free/open source digital picture editing program.
 
 How to compile and run
-==============
-You would first require apue.2e files since the code is dependent on those files for executing accurately. They are available on github in the repository *raggi/apue.2e* as of 12/02/2014.
+=====================
 
 Once you have downloaded these files to your file folder, execute the command below. This command should work:
 ```
@@ -21,18 +20,8 @@ gcc analyze.c -I apue.2e/include apue.2e/lib/libapue.a -pthread -o analyze
 
 Verify that *./analyze* they copies a named file into another named file. Verify with copying *Untitled.bmp* to some other name with the *.bmp* extension.
 
-Extend my analyze.c program so that copied file is a revision of the original file in which
-
-ONE PIXEL wide blue vertical stripe
-
-extends from the bottom left corner
-
-to a pixel on the left edge of the image
-
-about halfway up to the top.
-
-How you can change the code and play with it
-===============================================
+More information
+=================
 
 Now, Stevens (who wrote the code with which I have made changes to) specified that the segment mapping the original file be READ-ONLY, and of course, the segment that maps the copy be READ-WRITE. *Therefore, if you simply use the reading references in my analyze() function to write (say with prow[1].blue = 37; ) there will be a segmentation fault!* The code opening the destination file with read-write access and giving the destination segment read-write access is
 ```
