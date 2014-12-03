@@ -1,4 +1,4 @@
-FileCopyThread
+secret-octo-happiness
 ==============
 Quite often, data within files, or in memory, is structured according to some externally imposed standard. The layout of the bits representing such data is out of the control of a programmer who might in simple applications choose any layout he or she wants. 
 
