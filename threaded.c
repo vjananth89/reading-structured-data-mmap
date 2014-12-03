@@ -76,7 +76,7 @@ main(int argc, char *argv[])
 	snprintf(cmd,CMDSIZE,
 		 "echo AFTER threads; cat /proc/%d/maps; echo ", pid);
 	system(cmd);
-//	pthread_join(thread1,0);
-//	pthread_join(thread2,0);
+	pthread_join(thread1,0);
+	pthread_join(thread2,0);
 	exit(0);
 }
